@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    .sidebar {
+      position: fixed;
+      top: 56px; /* Adjust based on your header height */
+      bottom: 0;
+      left: 0;
+      width: 250px;
+      background-color: #f8f9fa;
+      padding-top: 56px; /* Adjust based on your header height */
+      border-right: 1px solid #dee2e6;
+      overflow-y: auto;
+    }
+
+    @media (max-width: 992px) {
+      .sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <i class="fas fa-plus"></i> New Order
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<!-- Bootstrap JS, jQuery, Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-A7k/ZgIqbdwwzH0CeJ3HPn5/UtN0B+NWLO6IyIz0a0icZp5sK+tt52a2+i5upHVI"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+Q6E9DHd5l5v7Zl0qGCwBQ/l6Is6YZpx3Gxi1T7qFq8EFLNGSVYs/p0k5G"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+

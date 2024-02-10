@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for iPhone-like appearance */
+    body {
+      padding-bottom: 60px; /* Height of the footer */
+    }
+
+    .navbar-brand img {
+      width: 120px; /* Adjust as needed */
+    }
+
+    .footer {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #f8f9fa;
+        border-top: 1px solid #dee2e6;
+        padding: 10px 0;
+        display: block;
+      }
+
+      .sidebar {
+        display: none;
+      }
+    }
+
+    .footer ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .footer ul li {
+      text-align: center;
+    }
+
+    .footer ul li a {
+      color: #495057;
+      text-decoration: none;
+    }
+
+    .footer ul li a:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+
+<body>
+<app-header></app-header>
+
+
+<!-- Main content -->
+<main role="main" class="pt-5 mt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar navigation -->
+      <nav class="col-md-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active">
+                <i class="fas fa-user"></i>User Profile
+              </a>
+            </li>
+            <!-- Calling SignOut() Api from AuthService -->
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="signOut()">
+                <i class="fas fa-sign-out-alt"></i>Log out
+              </a>
+            </li>
+            <!-- New Order -->
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/new-order']">
+                <i class="fas fa-plus"></i>New Order
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- User Profile Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="inner-adjust">
+          <div class="pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">User Profile</h1>
+          </div>
+          <!-- Show user data when logged in -->
+          <div class="row" *ngIf="authService.userData as user">
+            <div class="col-md-12">
+              <div class="media">
+                <div class="media-body">
+                  <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                  <p>Email: <strong>{{user.email}}</strong></p>
+                  <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- New Order Form -->
+          <div class="row" id="newOrderForm" style="display: none;">
+            <div class="col-md-12">
+              <h2>New Order Form</h2>
+              <!-- Your form fields here -->
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <ul>
+      <li><a href="#"><i class="fas fa-user"></i>User Profile</a></li>
+      <li><a href="#" onclick="signOut()"><i class="fas fa-sign-out-alt"></i>Log out</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Bootstrap JS, jQuery, Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-A7k/ZgIqbdwwzH0CeJ3HPn5/UtN0B+NWLO6IyIz0a0icZp5sK+tt52a2+i5upHVI"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+Q6E9DHd5l5v7Zl0qGCwBQ/l6Is6YZpx3Gxi1T7qFq8EFLNGSVYs/p0k5G"
+        crossorigin="anonymous"></script>
+
+<!-- Your custom JavaScript -->
+<script>
+  // Sample function for signing out
+  function signOut() {
+    console.log("Signing out...");
+    // Your sign out logic here
+  }
+
+  // Function to show the new order form
+  function showNewOrderForm() {
+    document.getElementById('newOrderForm').style.display = 'block';
+  }
+</script>
+</body>
+
+</html>
