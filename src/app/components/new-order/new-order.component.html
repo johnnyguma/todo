@@ -13,6 +13,8 @@
 
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
     max-width: 650px;
+
+    border-radius: 25px;
   }
 
   .order-form-label {
@@ -72,7 +74,7 @@
           <div class="col-12">
             <label class="order-form-label">Type of thing you want to order</label>
           </div>
-          <div class="container1" style="padding-top: 64px">
+          <div class="container1" style="padding-top: 8px">
             <div *ngFor="let row of rows; let i = index">
               <div class="row justify-content-center mb-2">
                 <div class="col-md-12">
@@ -102,29 +104,9 @@
 
         </div>
 
-        <div class="row mt-3 mx-4">
-          <div class="col-12">
-            <label class="order-form-label">Another type of thing you want to order</label>
-          </div>
-          <div class="col-12">
-            <div class="form-outline">
-              <input type="text" id="form4" class="form-control order-form-input" />
-            </div>
-          </div>
-        </div>
 
-        <div class="row mt-3 mx-4">
-          <div class="col-12">
-            <label class="order-form-label" for="date-picker-example">Date</label>
-          </div>
-          <div class="col-12">
-            <div class="form-outline datepicker" data-mdb-toggle-button="false">
-              <input
-                type="text" class="form-control order-form-input" id="datepicker1" data-mdb-toggle="datepicker" />
-              <label for="datepicker1" class="form-label">Select a date</label>
-            </div>
-          </div>
-        </div>
+
+
 
         <div class="row mt-3 mx-4">
           <div class="col-12">

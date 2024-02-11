@@ -18,18 +18,42 @@
       bottom: 0;
       left: 0;
       width: 250px;
+
       background-color: #f8f9fa;
       padding-top: 50px; /* Adjust based on your header height */
       border-right: 1px solid #dee2e6;
       overflow-y: auto;
+      text-align: center;
 
     }
 
+    .nav-link{
+      color: black;
+    }
+
     .nav-item_neworder_btn{
-      border: 1px solid #bd2323;
+      border: 1px solid black;
       border-radius: 5px;
       width: 230px;
       margin-left: 5px;
+      background-color: black;
+      height: 48px;
+      padding-top: 10px;
+      cursor: pointer;
+
+
+    }
+    .nav-item_neworder_btn:hover{
+      background-color: #151515;
+
+
+    }
+.neworderbtn{
+  color: white;
+
+}
+    .neworderbtn:hover{
+      color: white;
 
     }
 
@@ -76,7 +100,7 @@
   <ul class="nav flex-column">
 
     <li  class="nav-item_neworder_btn">
-      <a class="nav-link text-white bg-danger border-danger" href="/new-order">
+      <a class="neworderbtn" href="/new-order">
         <i class=""></i> New Order
       </a>
     </li>
@@ -98,6 +122,11 @@
     <li class="nav-item">
       <a class="nav-link" href="/Downloads">
         <i></i> Downloads
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sign-in">
+        <i></i> logout
       </a>
     </li>
 
